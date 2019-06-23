@@ -17,6 +17,9 @@ class TrainSet:
     def __call__(self, model_name, hidden_size = 128, seq_length = 22, 
             split_rate = .9, batch_size = 512, num_epochs = 100, num_layers = 2):
 
+        print("*"*10)
+        print(prices.train_size)
+        print("*"*10)
         train_size = int(self.prices.train_size * split_rate)
         X = torch.unsqueeze(torch.from_numpy(self.prices.X[:train_size, :]).float(), 1)
         X_train, Y_train = utils.data_process(X, train_size, seq_length)
