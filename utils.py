@@ -23,7 +23,7 @@ def plot(axislengths, prices, colors, xLabels, yLabels, Title):
     plt.figure()
     for i in range(0, len(axislengths)):
         length = axislengths[i]
-        plt.plot(range(0, length), prices[i][:length], color = colors[i], label = Legends[i])
+        plt.plot(range(0, length), prices[i][:length], color = colors[i])
     legend = plt.legend(loc='upper left')
     legend.get_frame()
 

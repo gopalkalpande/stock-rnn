@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from torch import nn
-
+import pandas as pd
 from data_loading import Loader
 import utils
 
@@ -36,6 +36,14 @@ class EvalSet:
         print(loss_sum)
         Y_pred.resize_(Y_pred.shape[0] * Y_pred.shape[1])
         Y_test.resize_(Y_test.shape[0] * Y_test.shape[1])
+
+        my_pred = pd.DataFrame(columns=['pred', 'actual'])
+        my_pred.head()
+
+        my_pred['pred'] = Y_pred.numpy()
+        my_pred['actual'] = Y_test.numpy()
+
+        my_pred.to_csv('/content/drive/My Drive/abc/Stock_rnn.csv', sep=',', encoding ='utf-8')
 
         utils.plot([Y_pred.shape[0], Y_test.shape[0]], [Y_pred.numpy(), Y_test.numpy()], 
         ['blue', 'red'], 'Time (Days)', 'Price', 
