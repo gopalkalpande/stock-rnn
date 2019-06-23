@@ -5,12 +5,12 @@ class Loader:
 
     def __init__(self, filename, window_size, LogReturn = True):
 
-        adjusted_close = np.genfromtxt(filename, delimiter = ',', skip_header = 1, usecols = (5))
+        close = np.genfromtxt(filename, delimiter = ',', skip_header = 1, usecols = (4))
 
         if (LogReturn):
-            log_return = utils.logret(adjusted_close) 
+            log_return = utils.logret(close) 
         else:
-            log_return = adjusted_close
+            log_return = close
 
         self.train_size = log_return.shape[0] // window_size
 
