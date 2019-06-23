@@ -47,4 +47,4 @@ class TrainSet:
         
         torch.save(model, model_name + '.model')
         utils.plot([len(loss_plt)], [np.array(loss_plt)], 'black', 
-                                    'Epoch', 'Loss Sum', 'MSE Loss Function')
+                                    'Epoch', 'Loss Sum', 'MSE Loss Function', , ['Prediction', 'Ground Truth'])

@@ -19,11 +19,11 @@ def data_process(X, train_size, num_steps):
         Y_result = torch.cat((Y_result, X[s + num_steps, :, :]), dim = 0)
     return X_result, Y_result
 
-def plot(axislengths, prices, colors, xLabels, yLabels, Title):
+def plot(axislengths, prices, colors, xLabels, yLabels, Title, Legends):
     plt.figure()
     for i in range(0, len(axislengths)):
         length = axislengths[i]
-        plt.plot(range(0, length), prices[i][:length], color = colors[i])
+        plt.plot(range(0, length), prices[i][:length], color = colors[i], label = Legends[i])
     legend = plt.legend(loc='upper left')
     legend.get_frame()
 
