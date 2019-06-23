@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import utils
 
 class Loader:
@@ -6,7 +7,7 @@ class Loader:
     def __init__(self, filename, window_size, LogReturn = True):
 
         close = np.genfromtxt(filename, delimiter = ',', skip_header = 1, usecols = (4))
-
+        print(close)
         if (LogReturn):
             log_return = utils.logret(close) 
         else:
