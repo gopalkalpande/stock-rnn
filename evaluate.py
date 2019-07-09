@@ -43,7 +43,9 @@ class EvalSet:
         my_pred['pred'] = Y_pred.numpy()
         my_pred['actual'] = Y_test.numpy()
 
-        my_pred.to_csv('/content/drive/My Drive/abc/Stock_rnn.csv', sep=',', encoding ='utf-8')
+        #/content/drive/My Drive/abc/
+
+        my_pred.to_csv('Stock_rnn.csv', sep=',', encoding ='utf-8')
 
         utils.plot([Y_pred.shape[0], Y_test.shape[0]], [Y_pred.numpy(), Y_test.numpy()], 
         ['blue', 'red'], 'Time (Days)', 'Price', 
