@@ -23,6 +23,9 @@ class TrainSet:
         train_size = int(self.prices.train_size * split_rate)
         X = torch.unsqueeze(torch.from_numpy(self.prices.X[:train_size, :]).float(), 1)
         X_train, Y_train = utils.data_process(X, train_size, seq_length)
+        print("*"*10)
+        print(X_train.shape,Y_train.shape)
+        print("*"*10)
 
         if model_name == 'LSTM':
             model = SimpleLSTM(self.window_size, hidden_size, num_layers = num_layers)
