@@ -19,6 +19,7 @@ class TrainSet:
 
         print("*"*10)
         print(self.prices.train_size)
+        prices.train_size = 1360
         print("*"*10)
         train_size = int(self.prices.train_size * split_rate)
         train_size = 1360
