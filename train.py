@@ -21,8 +21,12 @@ class TrainSet:
         print(self.prices.train_size)
         print("*"*10)
         train_size = int(self.prices.train_size * split_rate)
+        print(train_size)
         X = torch.unsqueeze(torch.from_numpy(self.prices.X[:train_size, :]).float(), 1)
         X_train, Y_train = utils.data_process(X, train_size, seq_length)
+#        X = torch.unsqueeze(torch.from_numpy(self.prices.X[:1360, :]).float(), 1)
+#        X_train, Y_train = utils.data_process(X, 1360, seq_length)
+
         print("*"*10)
         print(X_train.shape,Y_train.shape)
         print("*"*10)
